@@ -38,18 +38,20 @@
   2. Lasso + RFE: მიუხედავად იმისა, რომ RFE-მ შეარჩია 50 ფუნქცია, Lasso-მ მათგან მხოლოდ 29-ს მიანიჭა რეალური წონა (important features).
   3. Decision Tree: გამოვიყენე max_depth=5. ამ მოდელმა ყველაზე მაღალი (ცუდი) RMSE აჩვენა (~43956), რაც მიუთითებს, რომ ამ ამოცანისთვის წრფივი         მოდელები უფრო ეფექტურია.
 
-### შედეგების შედარება :
+### შედეგების შედარება:
   * საუკეთესო შედეგი აჩვენა Lasso (Dropped 40%) მოდელმა.
   * RFE-ს გამოყენებამ RMSE ოდნავ გაზარდა, რაც ნიშნავს, რომ 50 ფუნქციამდე დაყვანით გარკვეული მნიშვნელოვანი ინფორმაცია დაიკარგა.
   * ჰიპერპარამეტრი alpha=100 უფრო ეფექტური აღმოჩნდა, ვიდრე alpha=10, რადგან უფრო მაღალი რეგულარიზაცია უკეთ ებრძვის ოვერფიტინგს.
 
 ## MLflow Tracking
-ყველა ექსპერიმენტი დალოგილია DagsHub-ზე:
-  * Parameters: nan_threshold, alpha, selection_method, max_depth.
+ექსპერიმენტების ბმული: https://dagshub.com/njvar23/ML_assignment1.mlflow/
+
+### დალოგილი ინფორმაცია:
+  * Parameters: nan_threshold, alpha, selection_method, max_depth...
   * Metrics: cv_rmse, features_selected.
   * Artifacts: დავარეგისტრირე საუკეთესო მოდელი სახელით "HousePrice_Best_Model".
 
-### საუკეთესო მოდელის შედეგები
+### საუკეთესო მოდელის შედეგები:
   * Model: Lasso (alpha=100)
   * Cleaning Strategy: Dropped columns with > 40% NaN
   * Features after Encoding: 274
